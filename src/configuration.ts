@@ -80,10 +80,10 @@ export function findAndReadConfig(rawOptions: CreateOptions) {
 
   const options = assign<RegisterOptions>(
     {},
+    rawOptions,
     DEFAULTS,
     tsNodeOptionsFromTsconfig || {},
     { optionBasePaths },
-    rawOptions
   );
   options.require = [
     ...(tsNodeOptionsFromTsconfig.require || []),
